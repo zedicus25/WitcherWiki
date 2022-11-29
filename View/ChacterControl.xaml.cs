@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WitcherWiki.ViewModel;
 
-namespace WitcherWiki
+namespace WitcherWiki.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ChacterControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ChacterControl : UserControl
     {
-        public MainWindow()
+        public ChacterControl()
         {
             InitializeComponent();
-            this.DataContext = new ChaptersViewModel();
         }
     }
 }

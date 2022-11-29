@@ -10,21 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WitcherWiki.ViewModel;
 
-namespace WitcherWiki
+namespace WitcherWiki.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AllCards.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AllCards : Window
     {
-        public MainWindow()
+        public AllCards()
         {
             InitializeComponent();
-            this.DataContext = new ChaptersViewModel();
+            this.DataContext = new AllCardsVM();
+        }
+        public AllCards(int chapterId)
+        {
+            InitializeComponent();
+            this.DataContext = new AllCardsVM(chapterId);
         }
     }
 }
