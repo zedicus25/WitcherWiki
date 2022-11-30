@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WitcherWiki", "WitcherWiki.csproj", "{29720CDE-752F-4ABB-8849-90C3B5633CF2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WitcherWikiAdmin", "WitcherWikiAdmin\WitcherWikiAdmin.csproj", "{9F0123D6-93D4-4EEE-B4D6-A7A8F63B11C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{29720CDE-752F-4ABB-8849-90C3B5633CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29720CDE-752F-4ABB-8849-90C3B5633CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29720CDE-752F-4ABB-8849-90C3B5633CF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F0123D6-93D4-4EEE-B4D6-A7A8F63B11C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F0123D6-93D4-4EEE-B4D6-A7A8F63B11C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F0123D6-93D4-4EEE-B4D6-A7A8F63B11C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F0123D6-93D4-4EEE-B4D6-A7A8F63B11C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

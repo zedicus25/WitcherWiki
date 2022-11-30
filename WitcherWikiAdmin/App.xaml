@@ -1,0 +1,27 @@
+<Application 
+    x:Class="WitcherWikiAdmin.App" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:local="clr-namespace:WitcherWikiAdmin" 
+    StartupUri="./View/MainWindow.xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:view="clr-namespace:WitcherWikiAdmin.View"
+    xmlns:viewmodel="clr-namespace:WitcherWikiAdmin.ViewModel">
+
+    <Application.Resources>
+
+
+
+        <ResourceDictionary x:Key="MaterialDesign">
+            <DataTemplate DataType="{x:Type viewmodel:CharactersVM}">
+                <view:CharactersControl></view:CharactersControl>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:ChaptersVM}">
+                <view:ChaptersControl></view:ChaptersControl>
+            </DataTemplate>
+            
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
