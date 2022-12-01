@@ -19,8 +19,8 @@
             <Button Content="Add/Delete chapters" Margin="10" Padding="15" Command="{Binding ShowChapters}"></Button>
             <Button Content="Update chapters" Margin="10" Padding="15" Command="{Binding UpdateChapters}"></Button>
             <Button Content="Add characters" Margin="10"  Padding="15" Command="{Binding ShowCharacters}"></Button>
-            <Button Content="Remove characters" Margin="10"  Padding="15" Command="{Binding }"></Button>
-            <Button Content="Update characters" Margin="10"  Padding="15" Command="{Binding }"></Button>
+            <Button Content="Remove characters" Margin="10"  Padding="15" Command="{Binding RemoveCharacters}"></Button>
+            <Button Content="Update characters" Margin="10"  Padding="15" Command="{Binding UpdateChapters}"></Button>
         </StackPanel>
     </Grid>
 </Window>

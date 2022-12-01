@@ -10,9 +10,6 @@
     xmlns:viewmodel="clr-namespace:WitcherWikiAdmin.ViewModel">
 
     <Application.Resources>
-
-
-
         <ResourceDictionary x:Key="MaterialDesign">
             <DataTemplate DataType="{x:Type viewmodel:CharactersVM}">
                 <view:CharactersControl></view:CharactersControl>
@@ -23,8 +20,12 @@
             <DataTemplate DataType="{x:Type viewmodel:UpdateChaptersVM}">
                 <view:UpdateChaptersControl></view:UpdateChaptersControl>
             </DataTemplate>
-            
+            <DataTemplate DataType="{x:Type viewmodel:RemoveCharactersVM}">
+                <view:RemoveCharactersControl></view:RemoveCharactersControl>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodel:UpdateCharactersVM}">
+                <view:UpdateCharactersControl></view:UpdateCharactersControl>
+            </DataTemplate>
         </ResourceDictionary>
-
     </Application.Resources>
 </Application>

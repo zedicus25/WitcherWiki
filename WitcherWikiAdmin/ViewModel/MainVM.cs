@@ -52,9 +52,31 @@ namespace WitcherWikiAdmin.ViewModel
             }); }
         }
 
-        
+        private RelayCommand _updateCharacters;
 
+        public RelayCommand UpdateCharacters
+        {
+            get
+            {
+                return _updateCharacters ?? new RelayCommand(() =>
+                {
+                    SelectedViewModel = new UpdateCharactersVM();
+                });
+            }
+        }
 
+        private RelayCommand _removeCharacters;
+
+        public RelayCommand RemoveCharacters
+        {
+            get
+            {
+                return _removeCharacters ?? new RelayCommand(() =>
+                {
+                    SelectedViewModel = new RemoveCharactersVM();
+                });
+            }
+        }
 
     }
 }
