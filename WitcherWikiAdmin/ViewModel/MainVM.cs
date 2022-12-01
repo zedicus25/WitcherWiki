@@ -42,6 +42,19 @@ namespace WitcherWikiAdmin.ViewModel
             })); }
         }
 
+        private RelayCommand _updateChapters;
+
+        public RelayCommand UpdateChapters
+        {
+            get { return _updateChapters ?? new RelayCommand(() =>
+            {
+                SelectedViewModel = new UpdateChaptersVM();
+            }); }
+        }
+
+        
+
+
 
     }
 }

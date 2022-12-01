@@ -17,7 +17,7 @@ namespace WitcherWikiAdmin
         public int Id { get; set; }
 
         [Required]
-        [StringLength(150)]
+        [StringLength(150, MinimumLength = 5)]
         public string Chapter_Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
