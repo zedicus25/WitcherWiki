@@ -38,7 +38,7 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <Button Margin="5" Padding="15" Content="Add character" Command="{Binding AddCharacterCommand}"></Button>
+            <Button Margin="5" Content="Add character" Command="{Binding AddCharacterCommand}"></Button>
         </StackPanel>
 
         <TextBlock Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="15" Text="{Binding Message}"> </TextBlock>

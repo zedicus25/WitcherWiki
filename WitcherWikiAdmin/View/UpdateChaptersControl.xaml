@@ -11,6 +11,7 @@
     <Grid>
 
         <StackPanel>
+            <TextBlock Margin="10" FontSize="18">Select chapter:</TextBlock>
             <ComboBox Margin="10" ItemsSource="{Binding Chapters}" SelectedItem="{Binding SelectedChapter, UpdateSourceTrigger=PropertyChanged}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -20,7 +21,7 @@
             </ComboBox>
             <TextBlock Margin="10" FontSize="18">Enter new name for chapter:</TextBlock>
             <TextBox Margin="10" FontSize="18" Text="{Binding SelectedChapter.Chapter_Name, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-            <Button Margin="10" Padding="10" Content="Update" Command="{Binding UpdateCommand}"></Button>
+            <Button Margin="10" Content="Update" Command="{Binding UpdateCommand}"></Button>
         </StackPanel>
         <TextBlock VerticalAlignment="Bottom" FontSize="18" Text="{Binding Message}" Margin="10"></TextBlock>
     </Grid>

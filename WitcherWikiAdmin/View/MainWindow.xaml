@@ -4,23 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WitcherWikiAdmin" 
-        xmlns:viewmodel="clr-namespace:WitcherWikiAdmin.ViewModel" 
+        xmlns:viewmodel="clr-namespace:WitcherWikiAdmin.ViewModel" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         d:DataContext="{d:DesignInstance Type=viewmodel:MainVM}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <ContentControl Grid.Column="1" Grid.ColumnSpan="2" Content="{Binding SelectedViewModel}"></ContentControl>
-        <StackPanel>
-            <Button Content="Add/Delete chapters" Margin="10" Padding="15" Command="{Binding ShowChapters}"></Button>
-            <Button Content="Update chapters" Margin="10" Padding="15" Command="{Binding UpdateChapters}"></Button>
-            <Button Content="Add characters" Margin="10"  Padding="15" Command="{Binding ShowCharacters}"></Button>
-            <Button Content="Remove characters" Margin="10"  Padding="15" Command="{Binding RemoveCharacters}"></Button>
-            <Button Content="Update characters" Margin="10"  Padding="15" Command="{Binding UpdateCharacters}"></Button>
-        </StackPanel>
+        <ToolBarTray  Orientation="Vertical">
+            <ToolBar
+                Style="{StaticResource MaterialDesignToolBar}"
+                ClipToBounds="False">
+                <Button Command="{Binding ShowChapters}"
+                    ToolTip="Add/Delete chapters"
+                    Content="{materialDesign:PackIcon Kind=PlusCircleOutline}" />
+                <Button Command="{Binding UpdateChapters}"
+                    ToolTip="Update chapters"
+                    Content="{materialDesign:PackIcon Kind=Refresh}" />
+                <Separator />
+                <Button Command="{Binding ShowCharacters}"
+                    ToolTip="Add characters"
+                    Content="{materialDesign:PackIcon Kind=AccountPlusOutline}" />
+                <Button Command="{Binding RemoveCharacters}"
+                    ToolTip="Remove characters"
+                    Content="{materialDesign:PackIcon Kind=AccountRemoveOutline}" />
+                <Button Command="{Binding UpdateCharacters}"
+                    ToolTip="Update characters"
+                    Content="{materialDesign:PackIcon Kind=Refresh}" />
+            </ToolBar>
+        </ToolBarTray>
+        <ContentControl  Margin="50,0,0,0" Content="{Binding SelectedViewModel}"></ContentControl>
     </Grid>
 </Window>

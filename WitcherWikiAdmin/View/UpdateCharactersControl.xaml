@@ -20,14 +20,14 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel>
-            <ComboBox Margin="10" VerticalAlignment="Top" ItemsSource="{Binding Chapters}" SelectedItem="{Binding SelectedChapter}">
+            <ComboBox Margin="10" VerticalAlignment="Top" FontSize="15" ItemsSource="{Binding Chapters}" SelectedItem="{Binding SelectedChapter}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Chapter_Name}"></TextBlock>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <Button Margin="10" Padding="15" Content="Update character" Command="{Binding UpdateCommand}"></Button>
+            <Button Margin="10" Content="Update character" Command="{Binding UpdateCommand}"></Button>
         </StackPanel>
 
         <ListBox  ItemsSource="{Binding Characters}" SelectedItem="{Binding SelectedCharacter}" Margin="10" Grid.Column="1" Grid.ColumnSpan="4">
@@ -40,24 +40,24 @@
 
         <TextBlock Grid.Row="2" Margin="10" FontSize="15" Text="{Binding Message}" TextWrapping="Wrap"></TextBlock>
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <TextBlock Margin="5">Enter new name:</TextBlock>
-            <TextBox Text="{Binding SelectedCharacter.Name}" Margin="5"></TextBox>
-            <TextBlock Margin="5">Enter new description:</TextBlock>
-            <TextBox Text="{Binding SelectedCharacter.Description}" Height="55" Margin="5"></TextBox>
-            <TextBlock Margin="5">Enter new sex:</TextBlock>
-            <TextBox Text="{Binding SelectedCharacter.Sex}" Margin="5"></TextBox>
-            <TextBlock Margin="5">Enter new race:</TextBlock>
-            <TextBox Text="{Binding SelectedCharacter.Race}" Margin="5"></TextBox>
+            <TextBlock FontSize="15" Margin="5">Enter new name:</TextBlock>
+            <TextBox FontSize="13" Text="{Binding SelectedCharacter.Name}" Margin="5"></TextBox>
+            <TextBlock FontSize="15" Margin="5">Enter new description:</TextBlock>
+            <TextBox FontSize="13" Text="{Binding SelectedCharacter.Description}" Height="55" Margin="5"></TextBox>
+            <TextBlock FontSize="15" Margin="5">Enter new sex:</TextBlock>
+            <TextBox FontSize="13" Text="{Binding SelectedCharacter.Sex}" Margin="5"></TextBox>
+            <TextBlock FontSize="15" Margin="5">Enter new race:</TextBlock>
+            <TextBox FontSize="13" Text="{Binding SelectedCharacter.Race}" Margin="5"></TextBox>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <TextBlock Margin="5">Enter new occupation:</TextBlock>
-            <TextBox Text="{Binding SelectedCharacter.Occupation}" Margin="5"></TextBox>
-            <TextBlock Margin="5">Enter new affiliation:</TextBlock>
-            <TextBox Text="{Binding SelectedCharacter.Affiliation}" Margin="5"></TextBox>
-            <TextBlock Margin="5">Enter new image url:</TextBlock>
-            <TextBox Text="{Binding SelectedCharacter.Image_Url}" Margin="5"></TextBox>
-            <TextBlock Margin="5">Select new chapter:</TextBlock>
-            <ComboBox Margin="5" VerticalAlignment="Top" ItemsSource="{Binding Chapters}" SelectedItem="{Binding NewChapter}">
+            <TextBlock FontSize="15" Margin="5">Enter new occupation:</TextBlock>
+            <TextBox FontSize="13" Text="{Binding SelectedCharacter.Occupation}" Margin="5"></TextBox>
+            <TextBlock FontSize="15" Margin="5">Enter new affiliation:</TextBlock>
+            <TextBox FontSize="13" Text="{Binding SelectedCharacter.Affiliation}" Margin="5"></TextBox>
+            <TextBlock FontSize="15" Margin="5">Enter new image url:</TextBlock>
+            <TextBox FontSize="13" Text="{Binding SelectedCharacter.Image_Url}" Margin="5"></TextBox>
+            <TextBlock FontSize="15" Margin="5">Select new chapter:</TextBlock>
+            <ComboBox FontSize="15" Margin="5" VerticalAlignment="Top" ItemsSource="{Binding Chapters}" SelectedItem="{Binding NewChapter}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Chapter_Name}"></TextBlock>

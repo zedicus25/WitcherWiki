@@ -15,7 +15,7 @@
             <Image Height="150" Width="100" Stretch="Fill" Source="{Binding Image_Url, Converter={StaticResource ImageConvertor}}">
                 
             </Image>
-            <TextBlock Margin="10 75" Text="{Binding Name}" FontSize="15" TextAlignment="Center" TextWrapping="Wrap">
+            <TextBlock Margin="10 75" Text="{Binding Name}" FontSize="18" TextAlignment="Center" TextWrapping="Wrap">
                 
             </TextBlock>
         </StackPanel>

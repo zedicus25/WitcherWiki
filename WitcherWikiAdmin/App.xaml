@@ -7,10 +7,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:view="clr-namespace:WitcherWikiAdmin.View"
-    xmlns:viewmodel="clr-namespace:WitcherWikiAdmin.ViewModel">
+    xmlns:viewmodel="clr-namespace:WitcherWikiAdmin.ViewModel"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <Application.Resources>
-        <ResourceDictionary x:Key="MaterialDesign">
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:CustomColorTheme BaseTheme="Light" PrimaryColor="DarkGreen" SecondaryColor="DarkCyan" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type viewmodel:CharactersVM}">
                 <view:CharactersControl></view:CharactersControl>
             </DataTemplate>

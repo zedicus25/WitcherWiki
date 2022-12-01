@@ -31,6 +31,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Margin="5" Padding="15" Content="Remove" Command="{Binding RemoveCommand}"></Button>
+        <Button Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Margin="5" Content="Remove" Command="{Binding RemoveCommand}"></Button>
     </Grid>
 </UserControl>
