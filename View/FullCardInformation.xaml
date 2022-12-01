@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WitcherWiki.View"
         xmlns:convertors="clr-namespace:WitcherWiki.Convertors"
         mc:Ignorable="d"
-        Title="FullCardInformation" Height="450" Width="600">
+        Title="Full information" Icon="https://bit.ly/3ugTBFa" Height="550" Width="900">
     <Window.Resources>
         <convertors:Base64ImageConverter x:Key="ImageConvertor" />
     </Window.Resources>
@@ -21,28 +21,32 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-
+        <Image Panel.ZIndex="-5" Grid.RowSpan="3" Grid.ColumnSpan="3" Source="https://i.imgur.com/Oh0Nkn3.jpg" Stretch="Fill"></Image>
         <Image Margin="10" Grid.RowSpan="2" Source="{Binding Image_Url, Converter={StaticResource ImageConvertor}}"></Image>
-        <StackPanel Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="2">
-            <TextBlock Text="{Binding Name}" TextWrapping="Wrap"  FontSize="22" Margin="10"></TextBlock>
-            <TextBlock Text="{Binding Description}" FontSize="15" TextWrapping="Wrap" Margin="10"></TextBlock>
-            <StackPanel Margin="10 5 10 0" Orientation="Horizontal">
-                <TextBlock FontWeight="Bold" FontStyle="Oblique" Padding="0 0 5 0" FontSize="13">Пол:</TextBlock>
-                <TextBlock TextWrapping="Wrap" Text="{Binding Sex}" FontSize="13" ></TextBlock>
-            </StackPanel>
-            <StackPanel Margin="10 5 10 0" Orientation="Horizontal">
-                <TextBlock FontWeight="Bold" FontStyle="Oblique" Padding="0 0 5 0" FontSize="13">Раса:</TextBlock>
-                <TextBlock TextWrapping="Wrap" Text="{Binding Race}" FontSize="13" ></TextBlock>
-            </StackPanel>
-            <StackPanel Margin="10 5 10 0" Orientation="Horizontal">
-                <TextBlock FontWeight="Bold" FontStyle="Oblique" Padding="0 0 5 0" FontSize="13">Род занятий:</TextBlock>
-                <TextBlock TextWrapping="Wrap" Text="{Binding Occupation}" FontSize="13" ></TextBlock>
-            </StackPanel>
-            <StackPanel Margin="10 5 10 0" Orientation="Horizontal">
-                <TextBlock FontWeight="Bold" FontStyle="Oblique" Padding="0 0 5 0" FontSize="13">Принадлежность:</TextBlock>
-                <TextBlock TextWrapping="Wrap" Text="{Binding Affiliation}" FontSize="13" ></TextBlock>
-            </StackPanel>
-        </StackPanel>
+
+            <ScrollViewer Margin="5" Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Visible">
+                <StackPanel>
+                    <TextBlock Foreground="#eee" FontFamily="Tabula Peutingeriana" Text="{Binding Name}" TextWrapping="Wrap"  FontSize="22" Margin="10"></TextBlock>
+                <TextBlock Foreground="#eee"  FontWeight="Light" FontFamily="Tabula Peutingeriana" Text="{Binding Description}" FontSize="13" TextWrapping="Wrap" Margin="10"></TextBlock>
+                    <StackPanel  Margin="10 5 10 0" Orientation="Horizontal">
+                    <TextBlock Foreground="#eee"  FontFamily="Tabula Peutingeriana" FontWeight="Bold" FontStyle="Oblique" Text="Пол: " FontSize="15"></TextBlock>
+                    <TextBlock Foreground="#eee"  FontFamily="Tabula Peutingeriana" TextWrapping="Wrap" Text="{Binding Sex}" FontSize="15" ></TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="10 5 10 0" Orientation="Horizontal">
+                    <TextBlock Foreground="#eee"  FontFamily="Tabula Peutingeriana" FontWeight="Bold" FontStyle="Oblique" Text="Раса: "  FontSize="15"></TextBlock>
+                    <TextBlock Foreground="#eee"  FontFamily="Tabula Peutingeriana" TextWrapping="Wrap" Text="{Binding Race}" FontSize="15" ></TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="10 5 10 0" Orientation="Horizontal">
+                    <TextBlock Foreground="#eee"  FontFamily="Tabula Peutingeriana"  FontWeight="Bold" Text="Род занятий: " FontStyle="Oblique" FontSize="15"></TextBlock>
+                    <TextBlock Foreground="#eee"  FontFamily="Tabula Peutingeriana" TextWrapping="Wrap" Text="{Binding Occupation}" FontSize="15" ></TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="10 5 10 0" Orientation="Horizontal">
+                    <TextBlock Foreground="#eee"  FontFamily="Tabula Peutingeriana" Text="Принадлежность: " FontWeight="Bold" FontStyle="Oblique" FontSize="15"></TextBlock>
+                    <TextBlock Foreground="#eee"  FontFamily="Tabula Peutingeriana" TextWrapping="Wrap" Text="{Binding Affiliation}" FontSize="15" ></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+
         
     </Grid>
 </Window>

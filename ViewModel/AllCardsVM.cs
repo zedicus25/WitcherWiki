@@ -29,6 +29,15 @@ namespace WitcherWiki.ViewModel
             }
         }
 
+        private string _back;
+
+        public string Background
+        {
+            get { return _back; }
+            set { _back = value; }
+        }
+
+
         public ObservableCollection<Character> Characters
         {
             get { return _characters; }
@@ -42,10 +51,12 @@ namespace WitcherWiki.ViewModel
         public AllCardsVM()
         {
             Characters = new ObservableCollection<Character>(new WitcherModel().Characters);
+            Background = @"https://i.imgur.com/SWMrvVe.jpg";
         }
         public AllCardsVM(int chapterId)
         {
             Characters = new ObservableCollection<Character>(new WitcherModel().Characters.Where(x => x.Chapert_Id == chapterId));
+            Background = @"https://i.imgur.com/SWMrvVe.jpg";
         }
 
         public void OnPropertyChanged([CallerMemberName] string prop = "")

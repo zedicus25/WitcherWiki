@@ -4,14 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WitcherWiki" 
+        xmlns:viewmodel="clr-namespace:WitcherWiki.ViewModel" 
+        d:DataContext="{d:DesignInstance Type=viewmodel:ChaptersViewModel}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="250">
+         xmlns:convertors="clr-namespace:WitcherWiki.Convertors"
+        Title="Witcher Wiki" Icon="https://bit.ly/3ugTBFa" Height="560" Width="300"
+         ResizeMode="NoResize">
+    <Window.Resources>
+        <convertors:Base64ImageConverter x:Key="ImageConvertor" />
+    </Window.Resources>
     <Grid>
+        <Image Panel.ZIndex="-5" Stretch="Fill" Source="{Binding ImageBack, Converter={StaticResource ImageConvertor}}"></Image>
         <ListBox Grid.RowSpan="2" ItemsSource="{Binding Chapters}" SelectedItem ="{Binding SelectedChapter}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Chapter_Name}"></TextBlock>
-                </DataTemplate>
+                    <TextBlock Foreground="#eee" FontSize="15" FontFamily="Tabula Peutingeriana" Text="{Binding Chapter_Name}"></TextBlock>
+                </DataTemplate> 
             </ListBox.ItemTemplate>
         </ListBox>
     </Grid>

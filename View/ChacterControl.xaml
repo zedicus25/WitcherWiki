@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <Image  Margin="5" Grid.RowSpan="2" Source="{Binding Image_Url, Converter={StaticResource ImageConvertor}}" Height="200"  Width="150"/>
-        <TextBlock  TextWrapping="Wrap" FontSize="25" Margin="5" Grid.Row="2" Text="{Binding Name}">
+        <TextBlock FontFamily="Tabula Peutingeriana"  TextWrapping="Wrap" FontSize="25" Margin="5" Grid.Row="2" Text="{Binding Name}">
         </TextBlock>
     </Grid>
 </UserControl>

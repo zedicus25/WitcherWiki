@@ -18,6 +18,14 @@ namespace WitcherWiki.ViewModel
 
         private ObservableCollection<Chapter> _chapters;
 
+        private string _imageBack;
+
+        public string ImageBack
+        {
+            get { return _imageBack; }
+            set { _imageBack = value; }
+        }
+
 
         public ObservableCollection<Chapter> Chapters
         {
@@ -45,6 +53,7 @@ namespace WitcherWiki.ViewModel
         public ChaptersViewModel()
         {
             Chapters = new ObservableCollection<Chapter>(new WitcherModel().Chapters);
+            ImageBack = @"https://i.imgur.com/LokNtO6.jpg";
         }
 
 
