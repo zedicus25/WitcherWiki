@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,15 +66,25 @@ namespace WitcherWikiAdmin.ViewModel
             var model = new WitcherModel();
             var chapter = model.Chapters.FirstOrDefault(x => x.Id == SelectedChapter.Id);
             chapter.Chapter_Name = SelectedChapter.Chapter_Name;
-            if (model.SaveChanges() > 0)
+            var context = new ValidationContext(SelectedChapter);
+            var resValid = new List<ValidationResult>();
+            if (Validator.TryValidateObject(SelectedChapter, context, resValid, true))
             {
-                SetMessage("Update chapter");
-                SelectedChapter = null;
+                if (model.SaveChanges() > 0)
+                {
+                    SetMessage("Update chapter");
+                    SelectedChapter = null;
+                }
+                else
+                {
+                    SetMessage("Cannot save data to database");
+                }
             }
             else
             {
-                SetMessage("Cannot save data to database");
+                SetMessage("Inccoret data");
             }
+            
 
         }
 

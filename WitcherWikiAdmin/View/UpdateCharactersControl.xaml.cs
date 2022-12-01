@@ -24,5 +24,10 @@ namespace WitcherWikiAdmin.View
         {
             InitializeComponent();
         }
+
+        private void chracterLB_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+            Console.WriteLine("some");
+        }
     }
 }
