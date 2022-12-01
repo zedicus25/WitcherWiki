@@ -3,7 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WitcherWikiAdmin"
+        xmlns:local="clr-namespace:WitcherWikiAdmin" 
+        xmlns:viewmodel="clr-namespace:WitcherWikiAdmin.ViewModel" 
+        d:DataContext="{d:DesignInstance Type=viewmodel:MainVM}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -14,8 +16,11 @@
         </Grid.ColumnDefinitions>
         <ContentControl Grid.Column="1" Grid.ColumnSpan="2" Content="{Binding SelectedViewModel}"></ContentControl>
         <StackPanel>
-            <Button Margin="10" Padding="20" Command="{Binding ShowChapters}"></Button>
-            <Button Margin="10"  Padding="20" Command="{Binding ShowCharacters}"></Button>
+            <Button Content="Add/Delete chapters" Margin="10" Padding="15" Command="{Binding ShowChapters}"></Button>
+            <Button Content="Update chapters" Margin="10" Padding="15" Command="{Binding }"></Button>
+            <Button Content="Add characters" Margin="10"  Padding="15" Command="{Binding ShowCharacters}"></Button>
+            <Button Content="Remove characters" Margin="10"  Padding="15" Command="{Binding }"></Button>
+            <Button Content="Update characters" Margin="10"  Padding="15" Command="{Binding }"></Button>
         </StackPanel>
     </Grid>
 </Window>

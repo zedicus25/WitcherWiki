@@ -11,7 +11,7 @@ namespace WitcherWikiAdmin
         public int Id { get; set; }
 
         [Required]
-        [StringLength(150)]
+        [StringLength(150, MinimumLength = 3)]
         public string Name { get; set; }
 
         [Required]
@@ -20,23 +20,24 @@ namespace WitcherWikiAdmin
         public int Chapert_Id { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(50, MinimumLength = 3)]
         public string Sex { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(50, MinimumLength = 3)]
         public string Race { get; set; }
 
         [Required]
-        [StringLength(150)]
+        [StringLength(150, MinimumLength = 5)]
         public string Occupation { get; set; }
 
         [Required]
-        [StringLength(150)]
+        [StringLength(150, MinimumLength = 5)]
         public string Affiliation { get; set; }
 
         [Required]
-        [StringLength(150)]
+        [DataType(DataType.Url)]
+        [StringLength(150, MinimumLength = 10)]
         public string Image_Url { get; set; }
 
         public virtual Chapter Chapter { get; set; }

@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WitcherWikiAdmin.View"
+             xmlns:local="clr-namespace:WitcherWikiAdmin.View" 
+             xmlns:viewmodel="clr-namespace:WitcherWikiAdmin.ViewModel" 
+             d:DataContext="{d:DesignInstance Type=viewmodel:ChaptersVM}"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="450">
     <Grid>
@@ -28,6 +30,7 @@
             </ListBox>
             <Button Margin="10" Padding="10" Command="{Binding RemoveCommand}">Remove data</Button>
         </StackPanel>
+        <TextBlock Margin="10" FontSize="18" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Text="{Binding Message}"></TextBlock>
 
     </Grid>
 </UserControl>

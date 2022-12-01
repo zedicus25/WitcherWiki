@@ -22,6 +22,19 @@ namespace WitcherWikiAdmin.ViewModel
 			}
 		}
 
+		private string _message;
+
+		public string Message
+		{
+			get { return _message; }
+			set 
+			{ 
+				_message = value;
+				OnPropertyChanged("Message");
+			}
+		}
+
+
 		private Chapter _selectedChapter;
 
 		public Chapter SelectedChapter
@@ -45,7 +58,6 @@ namespace WitcherWikiAdmin.ViewModel
 				OnPropertyChanged("Chapters");
 			}
 		}
-
 
 
 		private RelayCommand _addCommand;
@@ -75,7 +87,15 @@ namespace WitcherWikiAdmin.ViewModel
 			var chapter = model.Chapters.FirstOrDefault(x => x.Id == SelectedChapter.Id);
 			model.Chapters.Remove(chapter);
 			if (model.SaveChanges() > 0)
-				Chapters.Remove(SelectedChapter);
+			{
+                Chapters.Remove(SelectedChapter);
+                SetMessage("Remove chapter");
+			}
+			else
+			{
+                SetMessage("Cannot save data to database");
+            }
+				
 		}
 
 		private  void AddData()
@@ -91,12 +111,30 @@ namespace WitcherWikiAdmin.ViewModel
             if (Validator.TryValidateObject(chapter, context, resValid, true))
             {
 				model.Chapters.Add(chapter);
-				model.SaveChanges();
-                ChapterName = String.Empty;
-                Chapters = new ObservableCollection<Chapter>(new WitcherModel().Chapters);
-				OnPropertyChanged("Chapters");
-            }	
+				if (model.SaveChanges() > 0)
+				{
+					SetMessage("Add new chapter");
+                    ChapterName = String.Empty;
+                    Chapters = new ObservableCollection<Chapter>(new WitcherModel().Chapters);
+                    OnPropertyChanged("Chapters");
+				}
+				else
+				{
+                    SetMessage("Cannot save data to database");
+                }
+			}
+			else
+			{
+                SetMessage("Incorrect chapter name");
+            }
         }
+
+		private async void SetMessage(string msg)
+		{
+			Message = msg;
+			await Task.Delay(3000);
+			Message = String.Empty;
+		}
 
 
 	}
