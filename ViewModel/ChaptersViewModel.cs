@@ -22,7 +22,11 @@ namespace WitcherWiki.ViewModel
         public ObservableCollection<Chapter> Chapters
         {
             get { return _chapters; }
-            set { _chapters = value; }
+            set 
+            { 
+                _chapters = value;
+                OnPropertyChanged("Chapters");
+            }
         }
 
         private Chapter _selectedChapter;
@@ -30,16 +34,13 @@ namespace WitcherWiki.ViewModel
         public Chapter SelectedChapter
         {
             get { return _selectedChapter; }
-            set { _selectedChapter = value; }
+            set 
+            {
+                _selectedChapter = value;
+                OnPropertyChanged("SelectedChapter");
+                ShowCharacters();
+            }
         }
-
-        private RelayCommand _showCommand;
-
-        public RelayCommand ShowCommand
-        {
-            get { return _showCommand ?? (_showCommand = new RelayCommand(ShowCharacters)); }
-        }
-
 
         public ChaptersViewModel()
         {
@@ -57,7 +58,7 @@ namespace WitcherWiki.ViewModel
             if (SelectedChapter == null)
                 return;
             AllCards cards = new AllCards(SelectedChapter.Id);
-            cards.ShowDialog();
+            cards.Show();
         }
     }
 }

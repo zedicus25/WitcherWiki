@@ -7,11 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="250">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
         <ListBox Grid.RowSpan="2" ItemsSource="{Binding Chapters}" SelectedItem ="{Binding SelectedChapter}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -19,6 +14,5 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Margin="20" Grid.Row="2" Command="{Binding ShowCommand}">Show characters</Button>
     </Grid>
 </Window>

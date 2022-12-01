@@ -1,0 +1,48 @@
+﻿<Window x:Class="WitcherWiki.View.FullCardInformation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WitcherWiki.View"
+        xmlns:convertors="clr-namespace:WitcherWiki.Convertors"
+        mc:Ignorable="d"
+        Title="FullCardInformation" Height="450" Width="600">
+    <Window.Resources>
+        <convertors:Base64ImageConverter x:Key="ImageConvertor" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Image Margin="10" Grid.RowSpan="2" Source="{Binding Image_Url, Converter={StaticResource ImageConvertor}}"></Image>
+        <StackPanel Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="{Binding Name}" TextWrapping="Wrap"  FontSize="22" Margin="10"></TextBlock>
+            <TextBlock Text="{Binding Description}" FontSize="15" TextWrapping="Wrap" Margin="10"></TextBlock>
+            <StackPanel Margin="10 5 10 0" Orientation="Horizontal">
+                <TextBlock FontWeight="Bold" FontStyle="Oblique" Padding="0 0 5 0" FontSize="13">Пол:</TextBlock>
+                <TextBlock TextWrapping="Wrap" Text="{Binding Sex}" FontSize="13" ></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="10 5 10 0" Orientation="Horizontal">
+                <TextBlock FontWeight="Bold" FontStyle="Oblique" Padding="0 0 5 0" FontSize="13">Раса:</TextBlock>
+                <TextBlock TextWrapping="Wrap" Text="{Binding Race}" FontSize="13" ></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="10 5 10 0" Orientation="Horizontal">
+                <TextBlock FontWeight="Bold" FontStyle="Oblique" Padding="0 0 5 0" FontSize="13">Род занятий:</TextBlock>
+                <TextBlock TextWrapping="Wrap" Text="{Binding Occupation}" FontSize="13" ></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="10 5 10 0" Orientation="Horizontal">
+                <TextBlock FontWeight="Bold" FontStyle="Oblique" Padding="0 0 5 0" FontSize="13">Принадлежность:</TextBlock>
+                <TextBlock TextWrapping="Wrap" Text="{Binding Affiliation}" FontSize="13" ></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Window>
