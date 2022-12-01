@@ -17,7 +17,8 @@
     <Grid>
         <ListBox ItemsSource="{Binding Characters}"
             ItemTemplate="{StaticResource cardTemplate}"
-            ItemsPanel="{StaticResource cardPanelTemplate}">
+            ItemsPanel="{StaticResource cardPanelTemplate}"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 
         </ListBox>
     </Grid>
